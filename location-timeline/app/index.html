@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NASA Space Apps Challenge 2016 | Location Timeline</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+  <!-- build:js scripts/vendor/modernizr.js -->
+  <script src="/bower_components/modernizr/modernizr.js"></script>
+  <!-- endbuild -->
+</head>
+
+<body>
+  <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <header class="container-fluid">
+    <h1 class="header-large text-primary">
+        Location Timeline
+      </h1>
+  </header>
+  <main class="container-fluid">
+    <form class="form form-inline">
+      <label for="lat" class="control-label">Latitude</label>
+      <div class="input-group">
+        <input type="text" name="lat" class="form-control input-lat" value="" placeholder="55.6761" aria-describedby="lat-addon">
+        <span class="input-group-addon" id="lat-addon">° N</span>
+      </div>
+      <label for="lon" class="control-label">Longitude</label>
+      <div class="input-group">
+        <input type="text" name="lon" class="form-control input-lon" value="" placeholder="12.5683" aria-describedby="lon-addon">
+        <span class="input-group-addon" id="lon-addon">° E</span>
+      </div>
+      <a href="#" type="button" name="randomize-coordinates" class="btn btn-default randomize-coordinates"><span class="glyphicon glyphicon-random"></span> Random</a>
+      <a href="#" type="button" name="submit-coordinates" class="btn btn-primary submit-coordinates"><span class="glyphicon glyphicon-send"></span> Submit</a>
+    </form>
+    <div class="col-xs-12 figure-container">
+
+    </div>
+  </main>
+  <footer class="text-center">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <ul class="nav navbar-nav nav-tabs nav-justified col-xs-12">
+          <li><a href="https://github.com/codher/stardust-station" target="_blank">View the code</a></li>
+          <li><a href="http://www.codher.com/" target="_blank">About Codher</a></li>
+        </ul>
+        <span class="col-xs-12">
+          Made with ❤ in Copenhagen by the Codher team
+        </span>
+      </div>
+    </nav>
+  </footer>
+
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js scripts/plugins.js -->
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
