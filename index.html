@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>NASA API intro</title>
+        <link href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet"></link>
+        <link href="index.css" type="text/css" rel="stylesheet"></link>
+    </head>
+    <body>
+        <div class="config-container">
+            <div class="config">
+                <label for="kilometers-per-pixel-amount">Kilometers per pixel:</label>
+                <input type="text" id="kilometers-per-pixel-amount" readonly>
+                <div id="kilometers-per-pixel"></div>
+            </div>
+
+            <div class="config">
+                <label for="object-multiplier-amount">Object size multiplier:</label>
+                <input type="text" id="object-multiplier-amount" readonly>
+                <div id="galaxy-object-multiplier"></div>
+            </div>
+
+            <div class="config">
+                <label for="mark-objects">Mark objects:</label>
+                <input type="checkbox" id="mark-objects">
+            </div>
+        </div>
+
+        <script src="bower_components/jquery/dist/jquery.min.js" type="application/javascript"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.min.js" type="application/javascript"></script>
+        <script src="index.js" type="application/javascript"></script>
+    </body>
+</html>
