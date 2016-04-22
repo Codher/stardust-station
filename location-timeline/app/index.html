@@ -46,6 +46,15 @@
         <span class="input-group-addon" id="lon-addon">° E</span>
       </div>
       <a href="#" type="button" name="randomize-coordinates" class="btn btn-default randomize-coordinates"><span class="glyphicon glyphicon-random"></span> Random</a>
+      <br>
+      <br>
+      <label for="date" class="control-label">Date (YYYY-MM-DD)</label>
+      <div class="input-group">
+        <input type="text" name="date" class="form-control input-date" value="2014-02-01" placeholder="2014-02-01" aria-describedby="date-addon">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
       <a href="#" type="button" name="submit-coordinates" class="btn btn-primary submit-coordinates"><span class="glyphicon glyphicon-send"></span> Submit</a>
     </form>
     <div class="col-xs-12 figure-container">
@@ -65,7 +74,6 @@
       </div>
     </nav>
   </footer>
-
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>

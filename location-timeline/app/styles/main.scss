@@ -42,17 +42,17 @@ body {
 }
 
 .location-figure {
-  position: absolute;
-  top: 0;
   left: 0;
+  position: relative;
+  top: 0;
 
   figcaption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     background: #fff;
-    padding: 4px;
+    top: 0;
     color: #333;
+    left: 0;
+    padding: 4px;
+    position: absolute;
   }
 }
 
