@@ -28,6 +28,15 @@ body, html {
     margin-bottom: 10px;
 }
 
+.config input[type="text"] {
+    background: white;
+}
+
+.config .dateLabel {
+    display: inline-block;
+    width: 50px;
+}
+
 .config > div {
     font-size: 12px;
     width: 200px;

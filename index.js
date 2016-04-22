@@ -102,6 +102,7 @@
         earthDiameter = 12756, // in km
         objectsSize = 200, // kilometers per pixel
         mPosX, mPosY, // Mouse position on screen
+        startDate, endDate,
 
 		// Configuration
 		objectsSizeMultiplier = 5000 // times the size of objects, as they are fairly small sometimes
@@ -151,6 +152,43 @@
         $("#object-multiplier-amount").val( $( "#galaxy-object-multiplier" ).slider( "value" ) );
 	});
 
+    // Init jquery datepickers
+    $("#from").datepicker({
+        defaultDate: "-2w",
+        dateFormat: 'yy-mm-dd',
+        changeMonth: true,
+        numberOfMonths: 1,
+        onClose: function(selectedDate) {
+            var date = new Date(selectedDate),
+                maxDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 6);
+
+            startDate = selectedDate;
+            $("#to").datepicker( "option", "minDate", selectedDate );
+            $("#to").datepicker( "option", "maxDate", maxDate );
+        }
+    });
+
+    $("#to").datepicker({
+        defaultDate: "-1w",
+        dateFormat: 'yy-mm-dd',
+        changeMonth: true,
+        numberOfMonths: 1,
+        onClose: function(selectedDate) {
+            $("#from").datepicker( "option", "maxDate", selectedDate );
+            var date = new Date(selectedDate),
+                minDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - 6);
+
+            endDate = selectedDate;
+            $("#from").datepicker( "option", "minDate", minDate );
+            $("#from").datepicker( "option", "maxDate", selectedDate );
+        }
+    });
+
+    $("#from").datepicker('setDate', '-2w');
+    $("#to").datepicker('setDate', '-1w');
+    $("#fetchAsteroids").on('click', fetchAsteroids);
+
+    // General canvas functions
     function animate() {
         if(animationRunning) {
             animationRunning = startAnimation( animate );
@@ -260,10 +298,9 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    function fetchAsteroids(startDate, endDate) {
-        startDate = startDate || '2016-04-01';
-        endDate = endDate || '2016-04-01';
-
+    function fetchAsteroids() {
+        console.log(startDate);
+        console.log(endDate);
 		$.get({
             url: 'https://api.nasa.gov/neo/rest/v1/feed',
             data: {
@@ -272,7 +309,7 @@
                 api_key: 'Svb1WzUbkhtNrQ5gMOlf3IJGCP6g7W9DTycsm00A'
             },
             success: function(data) {
-                console.log(data);
+                asteroids = [];
                 for(var date in data.near_earth_objects) {
                     _each(data.near_earth_objects[date], function(asteroid, i) {
                         asteroids.push({
